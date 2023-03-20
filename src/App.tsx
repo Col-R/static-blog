@@ -1,12 +1,21 @@
-import { MantineProvider, Text } from '@mantine/core';
+import React from 'react'
+import "./App.css"
 
-import RTE from './components/RichTextEditor';
+// components
+import TipTap from './components/TipTap'
 
-export default function App() {
+const App = () => {
+  const handleSubmit = (content: string) => {
+    console.log(content);
+  };
   return (
-    <MantineProvider withGlobalStyles withNormalizeCSS>
-      <Text>Welcome to Mantine!</Text>
-      <RTE />
-    </MantineProvider>
-  );
+    <div className = 'main_wrapper'>
+      <div className="message_display">
+        <h1>Message Display</h1>
+      </div>
+      <TipTap onSubmit = {handleSubmit}/>
+    </div>
+  )
 }
+
+export default App
