@@ -1,41 +1,56 @@
 *{
     font-family: 'Arsenal', sans-serif;
     font-family: 'Source Sans Pro', sans-serif;
+    /* background: #ffffff url("https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80") no-repeat cover; */
+}
+body {
+    background-image: url("https://images.unsplash.com/photo-1521489871110-81dc5a61dbda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1228&q=80");
+    background-size: cover;
 }
 
 .main_wrapper {
     display: flex;
     justify-content: space-evenly;
+    height: auto;
+    
 }
 .messages_wrapper {
-    background-color: #36393f;
+    background-color: transparent;
     width: 50%;
     padding: 2rem;
     margin-right: 1rem;
 }
 
 .message_display {
-    background-color: white;
-    color: #36393f;
+    background-color: #666b6c;
+    color: white;
     margin: 1rem;
     border-radius: 15px;
     text-align: left;
     padding: 0.5rem 0rem 0.5rem 1rem;
-    height: auto;
+    height: 250px;
+    overflow:hidden;
 }
+
+.moving_div {
+    position: relative;
+    transition: transform 0.5s ease-out;
+}
+
 .message_hidden {
     display: none;
 }
 
 .editor_wrapper {
-    width: 50%;
+    width: 40%;
+    height: auto;
     padding: 2rem;
-    background-color: #36393f;
+    background-color: transparent;
 }
 
 .editor {
-    background-color: white;
-    color: #36393f;
+    background-color: #666b6c;
+    color: white;
     margin: 1rem;
     border-radius: 15px;
     text-align: left;

@@ -8,11 +8,16 @@ import TipTap from './components/TipTap'
 const App = () => {
   const [timestamp, setTimestamp] = useState<string>('');
   const [message, setMessage] = useState<string>('');
+  const [position, setPosition] = useState<number>(0);
   const handleSubmit = (content: string) => {
+    setPosition(position);
+    
     const now  = new Date();
     const formattedDate = now.toLocaleString();
+    
     setTimestamp(formattedDate);
     setMessage(content);
+
     setDisplayDiv(true);
   };
 
@@ -27,7 +32,7 @@ const App = () => {
           {timestamp}
         </div>
         
-        <div className="message_display">
+        <div className="message_display moving_div" style = {{transform: `translateY(${position}px)`}}>
           <h1>Update 2</h1>
           <ul>
             <li>Same goes for this one</li>
@@ -35,7 +40,7 @@ const App = () => {
           </ul>
         </div>
 
-        <div className="message_display">
+        <div className="message_display moving_div" style = {{transform: `translateY(${position}px)`}}>
           <h1>Update 1</h1>
           <p>Hi there, this is a basic update. You can tell it's an update, because of the way that it is.</p>
         </div>
