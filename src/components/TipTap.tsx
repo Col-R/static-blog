@@ -28,9 +28,24 @@ const TipTap: React.FC<RichTextEditorProps> = ({ onSubmit, ...rest }) => {
         class: 'editor',
       },
     },
-    content: `<h2>
+    content: `
+    <h2>
     Hi there,
-    </h2>`,
+  </h2>
+  <p>
+    this is a <em>basic</em> example of <strong>tiptap</strong>. Sure, there are all kind of basic text styles you’d probably expect from a text editor. But wait until you see the lists:
+  </p>
+  <ul>
+    <li>
+      That's a bullet list with one …
+    </li>
+    <li>
+      … or two list items.
+    </li>
+  </ul>
+    <h1>It's showtime - </h1>
+    <h3>Let's get started</h3>
+    <p>but take your time </p>`,
     onUpdate: ({ editor }) => {
       setEditorContent(editor?.getHTML() ?? '');
     },
@@ -42,11 +57,11 @@ const TipTap: React.FC<RichTextEditorProps> = ({ onSubmit, ...rest }) => {
   };
 
   return (
-    <div className = 'editor_wrapper'>
-      <MenuBar editor={editor} />
-      <EditorContent editor={editor} />
-      <button onClick={handleSubmit}>Submit</button>
-    </div>
+      <div className = 'editor_wrapper'>
+        <MenuBar editor={editor} />
+        <EditorContent editor={editor} />
+        <button onClick={handleSubmit} id='submit'>Submit</button>
+      </div>
   );
 };
 
