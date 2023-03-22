@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react'
+import parse from 'html-react-parser';
 import "./App.css"
 
 // components
 import TipTap from './components/TipTap'
 
 const App = () => {
-  
+  const [timestamp, setTimestamp] = useState<string>('');
   const [message, setMessage] = useState<string>('');
   const handleSubmit = (content: string) => {
+    const now  = new Date();
+    const formattedDate = now.toLocaleString();
+    setTimestamp(formattedDate);
     setMessage(content);
     setDisplayDiv(true);
   };
@@ -18,9 +22,11 @@ const App = () => {
   return (
     <div className = 'main_wrapper'>
       <div className="messages_wrapper">
-        <div className={displayDiv ? ("message_display") : ("message_hidden")} dangerouslySetInnerHTML= {{__html: message}}>
+        <div className={displayDiv ? ("message_display") : ("message_hidden")}>
+          {parse(message)}
+          {timestamp}
         </div>
-
+        
         <div className="message_display">
           <h1>Update 2</h1>
           <ul>
