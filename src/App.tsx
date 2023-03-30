@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
 import parse from 'html-react-parser';
 import "./App.css"
+
+// maybe animate the div movement with this: https://www.framer.com/motion/component/
 
 // components
 import TipTap from './components/TipTap'
@@ -9,6 +11,7 @@ const App = () => {
   const [timestamp, setTimestamp] = useState<string>('');
   const [message, setMessage] = useState<string>('');
   const [position, setPosition] = useState<number>(0);
+
   const handleSubmit = (content: string) => {
     setPosition(position);
     
@@ -22,7 +25,6 @@ const App = () => {
   };
 
   const [displayDiv, setDisplayDiv] = useState<boolean>(false);
-
   
   return (
     <div className = 'main_wrapper'>
