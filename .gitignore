@@ -1,4 +1,6 @@
 dev_plan.md
+#Uncomment this before heroku deployment
+Procfile
 
 # Logs
 logs
